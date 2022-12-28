@@ -11,4 +11,4 @@ inteleJ idea uses  the other word navigation mode by default  but a user can cha
 
 
 ## feedback
-i will glad to get any feedback. if you have any proposal or you want to sent an error message use telegram https://t.me/kraneed or create an issue.
+i will glad to get any feedback. if you have any proposal or you want to sent an error message use [telegram](https://t.me/kraneed), [email](galiakhmetovkv@gmail.com) or [create an issue](https://github.com/kranid/Idea-Word-Separators/issues/new).
