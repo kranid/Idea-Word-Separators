@@ -22,7 +22,7 @@ class CustomJAB(JAB):
 		return super(JAB,self).TextInfo
 
 class CustomJABTextInfo(JABTextInfo):
-	WORD_SEPARATORS_PATTERN= r'(\W)\1*'
+	WORD_SEPARATORS_PATTERN= r'(\W)\1*|$'
 
 	def _getWordOffsets(self,offset):
 		if not (
@@ -37,6 +37,8 @@ class CustomJABTextInfo(JABTextInfo):
 		lineText = self._getTextRange(offset,lineEnd)
 		# Convert NULL and non-breaking space to space to make sure that words will break on them
 		lineText = lineText.translate({0:u' ',0xa0:u' '})
+		if not lineText:
+			return (offset, offset+1)
 		separator =re.search(self.WORD_SEPARATORS_PATTERN, lineText)
 		wordLen =separator.start() if self._isPunctuation(lineText[0 	]) else separator.end()
 		return (offset, offset+wordLen)
